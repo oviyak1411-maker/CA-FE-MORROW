@@ -1,0 +1,138 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 1.5rem 0;
+  transition: all 0.4s ease;
+}
+
+.scrolled {
+  background: rgba(250, 246, 240, 0.95);
+  backdrop-filter: blur(12px);
+  padding: 0.8rem 0;
+  box-shadow: 0 2px 20px rgba(60, 36, 21, 0.08);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-coffee);
+  text-decoration: none;
+  letter-spacing: 0.05em;
+}
+
+.logoAccent {
+  color: var(--color-caramel);
+}
+
+.navLinks {
+  display: flex;
+  list-style: none;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.navLinks a {
+  text-decoration: none;
+  color: var(--color-coffee);
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.navLinks a:not(.cta)::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-caramel);
+  transition: width 0.3s ease;
+}
+
+.navLinks a:not(.cta):hover::after {
+  width: 100%;
+}
+
+.cta {
+  background: var(--color-coffee);
+  color: white !important;
+  padding: 0.6rem 1.5rem;
+  border-radius: 50px;
+  transition: all 0.3s ease !important;
+}
+
+.cta:hover {
+  background: var(--color-caramel);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(200, 149, 108, 0.4);
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.line, .lineOpen {
+  width: 25px;
+  height: 2px;
+  background: var(--color-coffee);
+  transition: all 0.3s ease;
+  display: block;
+}
+
+.lineOpen:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.lineOpen:nth-child(2) {
+  opacity: 0;
+}
+
+.lineOpen:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .navLinks {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background: var(--color-cream);
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    transition: right 0.4s ease;
+    box-shadow: -5px 0 30px rgba(0,0,0,0.1);
+  }
+
+  .navLinks.open {
+    right: 0;
+  }
+}
