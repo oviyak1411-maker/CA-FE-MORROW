@@ -12,7 +12,7 @@ export default function Hero() {
         poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1920' height='1080'%3E%3Crect fill='%232a1810' width='1920' height='1080'/%3E%3C/svg%3E"
       >
         <source
-          src="https://cdn.coverr.co/videos/coverr-pouring-coffee-into-a-glass-3537/1080p.mp4"
+          src="https://videos.pexels.com/video-files/30876061/30876061-uhd_2560_1440_25fps.mp4"
           type="video/mp4"
         />
       </video>
